@@ -1,0 +1,36 @@
+----------------------------------------
+uninstall if installed and having issue
+----------------------------------------
+brew uninstall awscli 
+
+---------------
+install aws cli
+---------------
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+sudo installer -pkg AWSCLIV2.pkg -target /
+## add laptop password here
+
+---------------------
+create AWS access key
+---------------------
+
+-------------
+aws configure
+-------------
+nehagupta@Nehas-MacBook-Air ~ % aws configure                                                     
+
+Tip: You can deliver temporary credentials to the AWS CLI using your AWS Console session by running the command 'aws login'.
+
+AWS Access Key ID [None]: 
+AWS Secret Access Key [None]: 
+Default region name [None]: ap-southeast-1
+Default output format [None]: json
+nehagupta@Nehas-MacBook-Air ~ % aws sts get-caller-identity
+{
+    "UserId": "AIDA6G2MOBGO5FH6PLIH3",
+    "Account": "976728492445",
+    "Arn": "arn:aws:iam::976728492445:user/naveensingla"
+}
+nehagupta@Nehas-MacBook-Air ~ % 
+
+
