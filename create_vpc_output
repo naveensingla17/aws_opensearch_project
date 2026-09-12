@@ -1,0 +1,332 @@
+nehagupta@Nehas-MacBook-Air AWS_prometheus % sh networksetup.sh 
+============================================================
+AWS EKS OBSERVABILITY WORKSHOP
+NETWORK SETUP
+============================================================
+
+Region:
+ap-south-1
+
+Application VPC:
+10.10.0.0/16
+
+Monitoring VPC:
+10.20.0.0/16
+
+============================================================
+GETTING AWS ACCOUNT ID
+============================================================
+AWS Account ID:
+976728492445
+
+============================================================
+CREATING APPLICATION VPC
+============================================================
+Application VPC ID:
+vpc-0d002940c847cdc77
+Application VPC created successfully
+
+============================================================
+CREATING MONITORING VPC
+============================================================
+Monitoring VPC ID:
+vpc-07179026ae81c01d0
+Monitoring VPC created successfully
+
+============================================================
+CREATING APPLICATION INTERNET GATEWAY
+============================================================
+Application IGW:
+igw-046597a247adb6910
+
+============================================================
+CREATING MONITORING INTERNET GATEWAY
+============================================================
+Monitoring IGW:
+igw-02d4afae2bde0917f
+
+============================================================
+CREATING APPLICATION SUBNETS
+============================================================
+Application Subnets Created
+Public 1:
+subnet-0fd7ba8a004c580f1
+Public 2:
+subnet-0cbe37ee2f57f8ea0
+Private 1:
+subnet-01fa6867dce8e95ff
+Private 2:
+subnet-0e351da992f856bf5
+
+============================================================
+CREATING MONITORING SUBNETS
+============================================================
+Monitoring Subnets Created
+Public 1:
+subnet-021b84004971fe7c1
+Public 2:
+subnet-07238a316698ac97b
+Private 1:
+subnet-053209bebc665afb9
+Private 2:
+subnet-087a042621679df26
+
+============================================================
+TAGGING PUBLIC SUBNETS
+============================================================
+Public subnet tags applied
+
+============================================================
+TAGGING PRIVATE SUBNETS
+============================================================
+Private subnet tags applied
+
+============================================================
+CREATING APPLICATION PUBLIC ROUTE TABLE
+============================================================
+{
+    "Return": true
+}
+{
+    "AssociationId": "rtbassoc-0106e408915367db2",
+    "AssociationState": {
+        "State": "associated"
+    }
+}
+{
+    "AssociationId": "rtbassoc-01397ecfea9900271",
+    "AssociationState": {
+        "State": "associated"
+    }
+}
+Application Public Route Table:
+rtb-096c86c7932eb950b
+
+============================================================
+CREATING MONITORING PUBLIC ROUTE TABLE
+============================================================
+{
+    "Return": true
+}
+{
+    "AssociationId": "rtbassoc-0458c66c387455c74",
+    "AssociationState": {
+        "State": "associated"
+    }
+}
+{
+    "AssociationId": "rtbassoc-01f842deec53f3f78",
+    "AssociationState": {
+        "State": "associated"
+    }
+}
+Monitoring Public Route Table:
+rtb-0193a128ab4a9fe99
+
+============================================================
+ALLOCATING APPLICATION NAT ELASTIC IP
+============================================================
+Application NAT EIP Allocation ID:
+eipalloc-06315c20b6ecf1ca0
+
+============================================================
+CREATING APPLICATION NAT GATEWAY
+============================================================
+Application NAT Gateway:
+nat-0fb0aa54f158aaea2
+Waiting for Application NAT Gateway...
+Application NAT Gateway Available
+
+============================================================
+ALLOCATING MONITORING NAT ELASTIC IP
+============================================================
+Monitoring NAT EIP Allocation ID:
+eipalloc-0e2a12cd66bab5be7
+
+============================================================
+CREATING MONITORING NAT GATEWAY
+============================================================
+Monitoring NAT Gateway:
+nat-06ef7ba566adfb06c
+Waiting for Monitoring NAT Gateway...
+Monitoring NAT Gateway Available
+
+============================================================
+CREATING APPLICATION PRIVATE ROUTE TABLE
+============================================================
+{
+    "Return": true
+}
+{
+    "AssociationId": "rtbassoc-0856c9d640326beec",
+    "AssociationState": {
+        "State": "associated"
+    }
+}
+{
+    "AssociationId": "rtbassoc-06dc7ba041170db25",
+    "AssociationState": {
+        "State": "associated"
+    }
+}
+Application Private Route Table:
+rtb-007cb349c3de40707
+
+============================================================
+CREATING MONITORING PRIVATE ROUTE TABLE
+============================================================
+{
+    "Return": true
+}
+{
+    "AssociationId": "rtbassoc-0858987bc3c96decd",
+    "AssociationState": {
+        "State": "associated"
+    }
+}
+{
+    "AssociationId": "rtbassoc-0732ab6ffdfa5acb3",
+    "AssociationState": {
+        "State": "associated"
+    }
+}
+Monitoring Private Route Table:
+rtb-0c87b46d35ae87a1a
+
+============================================================
+CREATING VPC PEERING
+============================================================
+VPC Peering ID:
+pcx-0502c6dc968a1005d
+Accepting VPC Peering Connection...
+Waiting for VPC Peering to become active...
+VPC Peering Created
+
+============================================================
+ENABLING DNS RESOLUTION OVER VPC PEERING
+============================================================
+{
+    "AccepterPeeringConnectionOptions": {
+        "AllowDnsResolutionFromRemoteVpc": false,
+        "AllowEgressFromLocalClassicLinkToRemoteVpc": false,
+        "AllowEgressFromLocalVpcToRemoteClassicLink": false
+    },
+    "RequesterPeeringConnectionOptions": {
+        "AllowDnsResolutionFromRemoteVpc": true
+    }
+}
+{
+    "AccepterPeeringConnectionOptions": {
+        "AllowDnsResolutionFromRemoteVpc": true
+    },
+    "RequesterPeeringConnectionOptions": {
+        "AllowDnsResolutionFromRemoteVpc": true,
+        "AllowEgressFromLocalClassicLinkToRemoteVpc": false,
+        "AllowEgressFromLocalVpcToRemoteClassicLink": false
+    }
+}
+DNS Resolution Enabled
+
+============================================================
+ADDING VPC PEERING ROUTES
+============================================================
+{
+    "Return": true
+}
+{
+    "Return": true
+}
+{
+    "Return": true
+}
+{
+    "Return": true
+}
+VPC Peering Routes Added
+
+============================================================
+CREATING NETWORK OUTPUT FILE
+============================================================
+network-output.env created successfully
+
+============================================================
+NETWORK SETUP COMPLETED SUCCESSFULLY
+============================================================
+
+AWS REGION:
+ap-south-1
+
+------------------------------------------------------------
+APPLICATION VPC
+------------------------------------------------------------
+VPC:
+vpc-0d002940c847cdc77
+CIDR:
+10.10.0.0/16
+
+Public Subnet 1:
+subnet-0fd7ba8a004c580f1
+Public Subnet 2:
+subnet-0cbe37ee2f57f8ea0
+
+Private Subnet 1:
+subnet-01fa6867dce8e95ff
+Private Subnet 2:
+subnet-0e351da992f856bf5
+
+NAT Gateway:
+nat-0fb0aa54f158aaea2
+
+------------------------------------------------------------
+MONITORING VPC
+------------------------------------------------------------
+VPC:
+vpc-07179026ae81c01d0
+CIDR:
+10.20.0.0/16
+
+Public Subnet 1:
+subnet-021b84004971fe7c1
+Public Subnet 2:
+subnet-07238a316698ac97b
+
+Private Subnet 1:
+subnet-053209bebc665afb9
+Private Subnet 2:
+subnet-087a042621679df26
+
+NAT Gateway:
+nat-06ef7ba566adfb06c
+
+------------------------------------------------------------
+VPC PEERING
+------------------------------------------------------------
+Peering ID:
+pcx-0502c6dc968a1005d
+
+Application VPC:
+10.10.0.0/16
+Monitoring VPC:
+10.20.0.0/16
+
+------------------------------------------------------------
+SUBNET TAGGING
+------------------------------------------------------------
+
+Public Subnets:
+kubernetes.io/role/elb = 1
+
+Private Subnets:
+kubernetes.io/role/internal-elb = 1
+
+============================================================
+NEXT STEP
+============================================================
+
+Create Application EKS using:
+application-eks
+
+Create Monitoring EKS using:
+monitoring-eks
+
+============================================================
